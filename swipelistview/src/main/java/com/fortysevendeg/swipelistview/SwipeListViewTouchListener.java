@@ -820,10 +820,10 @@ public class SwipeListViewTouchListener implements View.OnTouchListener {
                 }
 
 
-                generateAnimate(frontView, swap, swapRight, downPosition);
                 if (swipeCurrentAction == SwipeListView.SWIPE_ACTION_CHOICE) {
                     swapChoiceState(downPosition);
                 }
+                generateAnimate(frontView, swap, swapRight, downPosition);
 
                 velocityTracker.recycle();
                 velocityTracker = null;
