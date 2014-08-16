@@ -367,9 +367,12 @@ public class SwipeListViewTouchListener implements View.OnTouchListener {
         int end = swipeListView.getLastVisiblePosition();
         for (int i = 0; i < checked.size(); i++) {
             if (checked.get(i) && i >= start && i <= end) {
+                checked.set(i, false);
                 reloadChoiceStateInView(swipeListView.getChildAt(i - start).findViewById(swipeFrontView), i);
             }
-            checked.set(i, false);
+            else {
+                checked.set(i, false);
+            }
         }
         swipeListView.onChoiceEnded();
         returnOldActions();
